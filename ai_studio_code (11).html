@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckNow - Nền tảng Quản lý & Chấm công theo thời gian thực</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        :root {
+            --primary-green: #28a745;
+            --dark-text: #343a40;
+            --light-gray: #f8f9fa;
+        }
+        .bg-primary-green { background-color: var(--primary-green); }
+        .text-primary-green { color: var(--primary-green); }
+        .border-primary-green { border-color: var(--primary-green); }
+        .text-dark { color: var(--dark-text); }
+        .bg-light-gray { background-color: var(--light-gray); }
+        .transition-all { transition: all 0.3s ease-in-out; }
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.2);
+        }
+        .aspect-video {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .aspect-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .bg-hero {
+            background-size: cover;
+            background-position: center;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #28a745, #22c55e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-white text-dark">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary-green">CheckNow</div>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#features" class="hover:text-primary-green transition-all">Tính năng</a>
+                <a href="#testimonials" class="hover:text-primary-green transition-all">Khách hàng</a>
+                <a href="#pricing" class="hover:text-primary-green transition-all">Bảng giá</a>
+                <a href="#form-cta" class="bg-primary-green text-white px-6 py-2 rounded-full hover:opacity-90 transition-all">Nhận Demo ngay</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section 
+            id="form-cta" 
+            class="py-16 md:py-24 bg-hero relative text-white" 
+            style="background-image: url('https://hcdigiz.com/demo/checknow/wp-content/uploads/2025/08/z6929795253399_30b71fe9fe519a0d6c2791f860010080.jpg');">
+            
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">Nền tảng Quản lý & Chấm công theo thời gian thực</h1>
+                        <p class="text-lg text-gray-200 mb-8">Giải pháp toàn diện giúp doanh nghiệp xây dựng, sản xuất, dịch vụ vận hành trơn tru, minh bạch và chuyên nghiệp.</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><svg class="w-6 h-6 text-primary-green mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span><span class="font-bold">Quản lý nhân sự</span> và chấm công đa hình thức (QR, Camera AI, GPS).</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-primary-green mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span><span class="font-bold">Quản lý dự án, tài sản, vật tư</span> trên một nền tảng duy nhất.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-primary-green mr-3 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span><span class="font-bold">Sổ nhật ký điện tử</span> và hệ thống báo cáo tự động, minh bạch.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 md:p-8 rounded-xl shadow-2xl text-dark">
+                        <div class="mb-6 text-center bg-gradient-to-br from-green-50 to-white p-6 rounded-xl border-2 border-primary-green shadow-lg"><p class="font-black text-gradient text-2xl sm:text-3xl md:text-3xl lg:text-4xl whitespace-nowrap">Trải nghiệm MIỄN PHÍ 100%</p><p class="text-base md:text-lg text-gray-800 mt-2 font-semibold">Tối đa 10 nhân sự & 2 dự án</p></div>
+                        <h2 class="text-2xl font-bold text-center mb-6">Đăng ký nhận tư vấn miễn phí</h2>
+                        <form action="#" method="POST" class="space-y-4">
+                            <div><label for="name" class="font-medium text-gray-700">Họ và tên</label><input type="text" id="name" name="name" class="form-input mt-1" placeholder="Nguyễn Văn A" required></div>
+                            <div><label for="phone" class="font-medium text-gray-700">Số điện thoại</label><input type="tel" id="phone" name="phone" class="form-input mt-1" placeholder="09xxxxxxxx" required></div>
+                            <div><label for="email" class="font-medium text-gray-700">Email công việc</label><input type="email" id="email" name="email" class="form-input mt-1" placeholder="bancan@congty.com" required></div>
+                            <div><label for="company" class="font-medium text-gray-700">Tên công ty</label><input type="text" id="company" name="company" class="form-input mt-1" placeholder="Công ty Cổ phần NextGen" required></div>
+                            <button type="submit" class="w-full bg-primary-green text-white py-3 rounded-lg font-semibold text-lg hover:opacity-90 transition-all shadow-lg">Gửi thông tin</button>
+                        </form>
+                        <div class="text-center mt-6"><p class="text-gray-500">Chuyên viên của CheckNow sẽ liên hệ với bạn ngay!</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FINALIZED PAIN POINTS SECTION ===== -->
+        <section class="py-20 bg-light-gray">
+          <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-4xl mx-auto">
+              <h2 class="text-3xl md:text-4xl font-bold text-dark">DOANH NGHIỆP CỦA BẠN ĐANG GẶP PHẢI?</h2>
+              <p class="text-lg text-gray-600 mt-4">Những <strong class="text-primary-green font-bold">"nỗi đau"</strong> thầm lặng đang kìm hãm sự phát triển và gây thất thoát chi phí mỗi ngày.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <!-- Card 1 -->
+              <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-primary-green"><div class="flex flex-col items-center text-center mb-6"><div class="p-3 rounded-full bg-green-100 mb-3"><svg class="w-8 h-8 text-primary-green" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div><h3 class="text-xl font-bold text-dark">Xây Dựng</h3></div><ul class="space-y-3 text-gray-700"><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Quản lý đa dự án, dàn trải, mất kiểm soát.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Thất thoát vật tư, khó truy xuất nguyên nhân.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Giám sát tiến độ thủ công, thiếu trực quan.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Gian lận chấm công của công nhân & tổ đội.</span></li></ul></div>
+              <!-- Card 2 -->
+              <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-primary-green"><div class="flex flex-col items-center text-center mb-6"><div class="p-3 rounded-full bg-green-100 mb-3"><svg class="w-8 h-8 text-primary-green" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div><h3 class="text-xl font-bold text-dark">Sản Xuất</h3></div><ul class="space-y-3 text-gray-700"><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Quản lý ca kíp phức tạp, dễ sai sót.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Chấm công hàng loạt khó khăn với máy truyền thống.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Khó khăn trong việc tính lương tăng ca, làm đêm.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Tốn thời gian tổng hợp công cuối tháng.</span></li></ul></div>
+              <!-- Card 3 -->
+              <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-primary-green"><div class="flex flex-col items-center text-center mb-6"><div class="p-3 rounded-full bg-green-100 mb-3"><svg class="w-8 h-8 text-primary-green" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><h3 class="text-xl font-bold text-dark">Doanh Nghiệp SME</h3></div><ul class="space-y-3 text-gray-700"><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Lãng phí chi phí đầu tư máy chấm công đắt đỏ.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Cần giải pháp linh hoạt, không cần lắp đặt.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Theo dõi nhân viên làm việc từ xa, đi thị trường.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Tốn kém chi phí bảo trì, sửa chữa thiết bị.</span></li></ul></div>
+              <!-- Card 4 -->
+              <div class="bg-white p-8 rounded-xl shadow-xl border-t-4 border-primary-green"><div class="flex flex-col items-center text-center mb-6"><div class="p-3 rounded-full bg-green-100 mb-3"><svg class="w-8 h-8 text-primary-green" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path></svg></div><h3 class="text-xl font-bold text-dark">Tổ chức sự kiện</h3></div><ul class="space-y-3 text-gray-700"><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Hàng trăm khách check-in/out cùng lúc gây ùn tắc.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Không kiểm soát, thu thập được dữ liệu khách hàng.</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Khó quản lý giờ công của nhân sự thời vụ (PG, PB).</span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Thiếu chuyên nghiệp trong khâu đón tiếp.</span></li></ul></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== FINALIZED STATS SECTION ===== -->
+        <section class="py-20"><div class="container mx-auto px-6"><div class="text-center mb-16"><h2 class="text-3xl md:text-4xl font-bold text-dark">Những con số "biết nói" về sự lãng phí</h2></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-white text-center p-8 rounded-xl shadow-lg"><p class="text-6xl md:text-7xl font-extrabold text-primary-green">500+</p><h3 class="text-xl font-bold mt-4 mb-2">Giờ làm việc/năm</h3><p class="text-gray-600">Bị tiêu tốn cho hàng tấn giấy tờ, file excel và các báo cáo chấm công thủ công.</p></div><div class="bg-white text-center p-8 rounded-xl shadow-lg"><p class="text-6xl md:text-7xl font-extrabold text-primary-green">35%</p><h3 class="text-xl font-bold mt-4 mb-2">Chi phí gia tăng</h3><p class="text-gray-600">Do thất thoát vật tư, gian lận chấm công và sai sót trong tính lương.</p></div><div class="bg-white text-center p-8 rounded-xl shadow-lg"><p class="text-6xl md:text-7xl font-extrabold text-primary-green">40%</p><h3 class="text-xl font-bold mt-4 mb-2">Dữ liệu sai sót</h3><p class="text-gray-600">Do nhập liệu thủ công, dẫn đến sai lệch lương thưởng và báo cáo thiếu tin cậy.</p></div><div class="bg-white text-center p-8 rounded-xl shadow-lg"><p class="text-6xl md:text-7xl font-extrabold text-primary-green">7-10</p><h3 class="text-xl font-bold mt-4 mb-2">Ngày chờ đợi</h3><p class="text-gray-600">Để tổng hợp báo cáo vận hành, khiến các quyết định chiến lược trở nên chậm trễ.</p></div><div class="bg-white text-center p-8 rounded-xl shadow-lg"><p class="text-6xl md:text-7xl font-extrabold text-primary-green">25%</p><h3 class="text-xl font-bold mt-4 mb-2">Tỷ lệ nghỉ việc</h3><p class="text-gray-600">Tăng cao ở các doanh nghiệp thiếu minh bạch về giờ công và chính sách phúc lợi.</p></div><div class="bg-white text-center p-8 rounded-xl shadow-lg"><p class="text-6xl md:text-7xl font-extrabold text-primary-green">9/10</p><h3 class="text-xl font-bold mt-4 mb-2">Doanh nghiệp</h3><p class="text-gray-600">Thừa nhận gặp khó khăn trong việc ra quyết định vì dữ liệu rời rạc, thiếu minh bạch.</p></div></div></div></section>
+        
+        <section class="py-20 bg-light-gray"><div class="container mx-auto px-6 text-center"><h2 class="text-3xl md:text-4xl font-bold text-dark max-w-4xl mx-auto">→ Đó là lý do CheckNow ra đời</h2><p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Để hỗ trợ anh/chị xử lý trọn vẹn những công việc “tưởng nhỏ mà không hề nhỏ”, giúp doanh nghiệp vận hành trơn tru, minh bạch và chuyên nghiệp.</p><div class="mt-10 max-w-6xl mx-auto aspect-video rounded-2xl shadow-2xl overflow-hidden ring-1 ring-gray-900/5"><iframe src="https://www.youtube.com/embed/wQNqwrgHOxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div></section>
+        
+        <section id="features" class="py-20"><div class="container mx-auto px-6"><div class="text-center mb-16"><h2 class="text-3xl md:text-4xl font-bold text-dark">Một nền tảng - Giải quyết mọi bài toán vận hành</h2></div><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all border-l-4 border-primary-green"><h3 class="text-xl font-bold mb-2">Quản lý Nhà thầu & Dự án</h3><p class="text-gray-600">Tạo dự án, quản lý nhân sự, thiết lập ca làm việc, theo dõi tiến độ công trường.</p></div><div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all border-l-4 border-primary-green"><h3 class="text-xl font-bold mb-2">Chấm công Thông minh</h3><p class="text-gray-600">Check-in/out bằng Face ID, Camera AI, mã QR, định vị GPS.</p></div><div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all border-l-4 border-primary-green"><h3 class="text-xl font-bold mb-2">Quản lý Tài sản & Vật tư</h3><p class="text-gray-600">Tạo mã, kiểm kê tài sản, quản lý xuất-nhập-tồn kho vật tư theo thời gian thực.</p></div><div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all border-l-4 border-primary-green"><h3 class="text-xl font-bold mb-2">Quản lý Nhân sự & Tiền lương</h3><p class="text-gray-600">Tự động hóa tính lương, quản lý đơn từ, xếp ca linh hoạt, hồ sơ nhân viên điện tử.</p></div><div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all border-l-4 border-primary-green"><h3 class="text-xl font-bold mb-2">Quản lý Phương tiện</h3><p class="text-gray-600">Theo dõi lịch trình xe, quản lý tài xế, nhật ký sửa chữa và vật tư tiêu hao.</p></div><div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all border-l-4 border-primary-green"><h3 class="text-xl font-bold mb-2">Hệ thống Báo cáo Đa dạng</h3><p class="text-gray-600">Sổ nhật ký điện tử tự động tạo báo cáo hằng ngày.</p></div></div></div></section>
+        
+        <section id="testimonials" class="py-20 bg-light-gray"><div class="container mx-auto px-6"><div class="text-center mb-16"><h2 class="text-3xl md:text-4xl font-bold text-dark">Khách hàng nói về chúng tôi</h2><p class="text-gray-600 mt-4 max-w-3xl mx-auto">CheckNow đã và đang đồng hành cùng sự phát triển của nhiều doanh nghiệp Việt.</p></div><div class="grid md:grid-cols-2 gap-8"><div class="bg-white p-8 rounded-lg shadow-lg flex flex-col"><p class="text-gray-700 italic text-lg mb-6 flex-grow">"CheckNow không chỉ là công cụ hỗ trợ chấm công, mà còn là giải pháp toàn diện giúp tối ưu hóa quy trình quản lý tại các công trường, giúp chúng tôi giảm thiểu tổn thất và tối ưu hóa nguồn lực."</p><div class="flex items-center mt-auto"><img src="https://hcdigiz.com/demo/checknow/wp-content/uploads/2025/08/2024-10-05-09-20-17-namhai.webp" alt="Logo Tập đoàn Nam Hải" class="w-16 h-16 rounded-full mr-4 object-contain border"><div><p class="font-bold text-dark">Ông Đặng Phước Toàn</p><p class="text-gray-500">Founder & CEO, Tập đoàn Nam Hải</p></div></div></div><div class="bg-white p-8 rounded-lg shadow-lg flex flex-col"><p class="text-gray-700 italic text-lg mb-6 flex-grow">"Điểm nổi bật là khả năng thiết lập Thẻ điện tử nhanh chóng cho hàng trăm nhân viên và tính năng phân quyền quản lý linh hoạt, giúp chúng tôi theo dõi 2000 vật tư, tài sản, 40 dự án theo từng cấp độ mà vẫn đảm bảo minh bạch."</p><div class="flex items-center mt-auto"><img src="https://hcdigiz.com/demo/checknow/wp-content/uploads/2025/08/LOGO-Thien-An-Khoi-Photoroom.png" alt="Logo Công ty TNHH Thiên An Khôi" class="w-16 h-16 rounded-full mr-4 object-contain border"><div><p class="font-bold text-dark">Anh Trần Nhơn Trí</p><p class="text-gray-500">Giám đốc, Công ty TNHH Thiên An Khôi</p></div></div></div><div class="bg-white p-8 rounded-lg shadow-lg flex flex-col"><p class="text-gray-700 italic text-lg mb-6 flex-grow">"Đây là một tiện ích tuyệt vời! Giải pháp chấm công linh hoạt và quản lý công trình toàn diện."</p><div class="flex items-center mt-auto"><img src="https://hcdigiz.com/demo/checknow/wp-content/uploads/2025/08/anlagoon.jpg" alt="Logo Công ty CP Đầu tư và Thu hoạch AK5" class="w-16 h-16 rounded-full mr-4 object-contain border"><div><p class="font-bold text-dark">Anh Nguyễn Anh Khôi</p><p class="text-gray-500">Chủ tịch HĐQT, Công ty CP Đầu tư và Thu hoạch AK5</p></div></div></div><div class="bg-white p-8 rounded-lg shadow-lg flex flex-col"><p class="text-gray-700 italic text-lg mb-6 flex-grow">"Phần mềm chấm công CheckNow cung cấp giải pháp quản lý thời gian làm việc hiệu quả với giao diện thân thiện và dễ sử dụng. CheckNow là lựa chọn lý tưởng cho quản lý nhân sự và dự án."</p><div class="flex items-center mt-auto"><img src="https://hcdigiz.com/demo/checknow/wp-content/uploads/2025/08/2024-10-05-12-17-43-logosn-01.webp" alt="Logo Nội thất Song Nguyễn" class="w-16 h-16 rounded-full mr-4 object-contain border"><div><p class="font-bold text-dark">Anh Nguyễn Văn Lãm</p><p class="text-gray-500">Founder, Nội thất Song Nguyễn</p></div></div></div></div></div></section>
+        
+        <!-- ===== FINAL PRICING SECTION ===== -->
+        <section id="pricing" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16"><h2 class="text-3xl md:text-4xl font-bold text-dark">Bảng giá dịch vụ</h2><p class="text-gray-600 mt-4 max-w-3xl mx-auto">Linh hoạt, minh bạch và không chi phí ẩn. Chọn gói phù hợp nhất với quy mô của bạn.</p></div>
+                
+                <div class="mb-20 text-center bg-white p-10 md:p-12 rounded-2xl border-2 border-dashed border-primary-green max-w-5xl mx-auto shadow-2xl relative overflow-hidden"><div class="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-green-100 rounded-full opacity-50"></div><div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-48 h-48 bg-green-100 rounded-full opacity-50"></div><div class="relative z-10"><div class="flex flex-wrap justify-center items-center gap-2 md:gap-4"><svg class="w-10 h-10 md:w-12 md:h-12 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg><h3 class="font-black text-gradient text-3xl sm:text-4xl md:text-5xl whitespace-nowrap">Trải nghiệm MIỄN PHÍ 100%</h3></div><p class="text-xl md:text-2xl text-gray-800 mt-4 font-semibold">Tối đa 10 nhân sự & 2 dự án</p><p class="text-gray-600 mt-2">Không yêu cầu thẻ tín dụng. Bắt đầu ngay!</p><a href="#form-cta" class="mt-8 inline-block bg-primary-green text-white px-10 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-all shadow-lg">Đăng ký dùng thử miễn phí</a></div></div>
+
+                <div class="max-w-4xl mx-auto relative"><div class="absolute -top-4 right-4 z-20"><div class="bg-yellow-400 text-dark font-bold text-center rounded-full py-2 px-6 transform rotate-12 shadow-lg">ƯU ĐÃI LỚN</div></div><div class="bg-white p-10 rounded-2xl shadow-2xl border-2 border-primary-green relative overflow-hidden"><div class="grid md:grid-cols-2 gap-8 items-center"><div><h3 class="text-2xl font-bold text-primary-green">Gói Doanh Nghiệp Linh Hoạt</h3><p class="text-5xl font-extrabold text-dark mt-4">199.000<span class="text-2xl font-medium text-gray-500"> đ/tháng</span></p><div class="mt-6 text-center bg-green-50 p-4 rounded-lg border border-dashed border-primary-green"><p class="font-semibold text-lg">Hoặc chỉ <span class="text-primary-green font-bold">1.198.000đ/năm</span></p><p class="font-bold text-yellow-500">TIẾT KIỆM 50%!</p></div></div><div><p class="font-semibold text-lg mb-3">Bao gồm tất cả các tính năng cốt lõi:</p><ul class="space-y-2 text-gray-700"><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Tối đa <span class="font-bold">50 nhân sự</span></span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Tối đa <span class="font-bold">10 dự án</span></span></li><li class="flex items-start"><svg class="w-5 h-5 text-primary-green mr-2 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span>Tối đa <span class="font-bold">100 mã tài sản/vật tư</span></span></li></ul></div></div></div></div>
+
+                <div class="text-center mt-10 max-w-4xl mx-auto bg-white p-8 rounded-2xl border-2 border-dashed border-primary-green">
+                    <p class="text-2xl font-bold text-dark">Doanh nghiệp của bạn có quy mô lớn hơn?</p>
+                    <a href="#form-cta" class="text-xl font-extrabold text-primary-green hover:underline">Liên hệ ngay để có báo giá riêng cho nhu cầu của bạn!</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white"><div class="container mx-auto px-6 py-12"><div class="grid md:grid-cols-4 gap-8"><div><h3 class="text-xl font-bold mb-4">CheckNow</h3><p class="text-gray-400">Nền tảng quản lý và chấm công theo thời gian thực, phát triển bởi CTCP Công nghệ số NextGen.</p></div><div><h3 class="text-lg font-semibold mb-4">Sản phẩm</h3><ul class="space-y-2"><li><a href="#features" class="text-gray-400 hover:text-white">Tính năng</a></li><li><a href="#pricing" class="text-gray-400 hover:text-white">Bảng giá</a></li></ul></div><div><h3 class="text-lg font-semibold mb-4">Công ty</h3><ul class="space-y-2"><li><a href="#" class="text-gray-400 hover:text-white">Về chúng tôi</a></li><li><a href="#" class="text-gray-400 hover:text-white">Liên hệ</a></li></ul></div><div><h3 class="text-lg font-semibold mb-4">Liên hệ</h3><p class="text-gray-400">10 Lê Đức Anh, P. Vỹ Dạ, TP. Huế</p><p class="text-gray-400">Email: contact@checknow.com.vn</p></div></div><div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-500">&copy; 2025 CTCP Công nghệ số NextGen. All Rights Reserved.</div></div></footer>
+
+</body>
+</html>
